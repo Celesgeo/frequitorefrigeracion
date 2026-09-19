@@ -1,0 +1,48 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Dependencies and build
+node_modules
+dist
+dist-ssr
+*.local
+
+# Secrets and environment
+.env
+.env.*
+!.env.example
+*.pem
+*.p12
+*.key
+credentials*.json
+service-account*.json
+
+# Local verification captures
+.verify
+
+# Editor
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# AI chats, prompts and local agent traces — never publish
+.cursor
+.claude
+.agents
+agent-transcripts
+*.canvas.tsx
+PROMPT.md
+PROMPTS.md
+prompts/

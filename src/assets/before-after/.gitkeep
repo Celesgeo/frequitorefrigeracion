@@ -1,0 +1,2 @@
+# Add real before/after pairs here when available.
+# Then set `site.features.showBeforeAfter` to true and populate `beforeAfterGallery.items`.
