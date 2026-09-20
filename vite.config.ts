@@ -12,9 +12,15 @@ export default defineConfig({
   },
   preview: {
     host: true,
-    allowedHosts: true,
+    allowedHosts: [
+      "frequitorefrigeracion.up.railway.app",
+      ".up.railway.app",
+    ],
   },
   server: {
-    allowedHosts: true,
+    allowedHosts: [
+      "frequitorefrigeracion.up.railway.app",
+      ".up.railway.app",
+    ],
   },
 });
