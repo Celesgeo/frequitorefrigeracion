@@ -5,4 +5,4 @@ nixPkgs = ["nodejs_22"]
 cmds = ["npm ci", "npm run build"]
 
 [start]
-cmd = "npx --yes serve -s dist -l $PORT"
+cmd = "npm start"
