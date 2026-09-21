@@ -1,8 +1,15 @@
+[variables]
+NIXPACKS_NODE_VERSION = "22"
+NPM_CONFIG_PRODUCTION = "false"
+
 [phases.setup]
 nixPkgs = ["nodejs_22"]
+
+[phases.install]
+cmds = ["npm ci"]
 
 [phases.build]
 cmds = ["npm run build"]
 
 [start]
-cmd = "npx serve -s dist -l tcp://0.0.0.0:$PORT"
+cmd = "node scripts/start.mjs"
