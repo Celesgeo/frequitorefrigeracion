@@ -57,6 +57,6 @@ server.on("error", (error) => {
   process.exit(1);
 });
 
-server.listen(port, "0.0.0.0", () => {
-  console.log(`Fresquito listening on 0.0.0.0:${port}`);
+server.listen(port, () => {
+  console.log(`Fresquito listening on port ${port}`);
 });

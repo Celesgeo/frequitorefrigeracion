@@ -8,6 +8,7 @@ RUN npm run build
 FROM node:22-alpine
 WORKDIR /app
 ENV NODE_ENV=production
+COPY package.json ./
 COPY --from=build /app/dist ./dist
 COPY scripts/start.mjs ./scripts/start.mjs
 CMD ["node", "scripts/start.mjs"]
