@@ -5,6 +5,12 @@ import { fileURLToPath } from "node:url";
 
 const port = Number(process.env.PORT || 8080);
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../dist");
+const indexFile = path.join(root, "index.html");
+
+if (!existsSync(indexFile)) {
+  console.error(`No se encontró ${indexFile}. El build no copió dist.`);
+  process.exit(1);
+}
 
 const types = {
   ".css": "text/css; charset=utf-8",
@@ -25,11 +31,10 @@ const types = {
 function resolveFile(urlPath) {
   const decoded = decodeURIComponent(urlPath.split("?")[0] || "/");
   const candidate = path.normalize(path.join(root, decoded));
-  if (!candidate.startsWith(root)) return path.join(root, "index.html");
-
+  if (!candidate.startsWith(root)) return indexFile;
   if (existsSync(candidate) && statSync(candidate).isFile()) return candidate;
   if (existsSync(path.join(candidate, "index.html"))) return path.join(candidate, "index.html");
-  return path.join(root, "index.html");
+  return indexFile;
 }
 
 const server = createServer((req, res) => {
@@ -39,7 +44,17 @@ const server = createServer((req, res) => {
     "Content-Type": types[ext] || "application/octet-stream",
     "Cache-Control": ext === ".html" ? "no-cache" : "public, max-age=31536000, immutable",
   });
-  createReadStream(filePath).pipe(res);
+  createReadStream(filePath)
+    .on("error", () => {
+      if (!res.headersSent) res.writeHead(500);
+      res.end();
+    })
+    .pipe(res);
+});
+
+server.on("error", (error) => {
+  console.error(error);
+  process.exit(1);
 });
 
 server.listen(port, "0.0.0.0", () => {
