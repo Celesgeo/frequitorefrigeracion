@@ -4,6 +4,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const port = Number(process.env.PORT || 8080);
+const host = process.env.HOST || "0.0.0.0";
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../dist");
 const indexFile = path.join(root, "index.html");
 
@@ -57,6 +58,6 @@ server.on("error", (error) => {
   process.exit(1);
 });
 
-server.listen(port, () => {
-  console.log(`Fresquito listening on port ${port}`);
+server.listen(port, host, () => {
+  console.log(`Fresquito listening on ${host}:${port}`);
 });
