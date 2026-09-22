@@ -3,8 +3,6 @@ import { createServer } from "node:http";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
-const port = Number(process.env.PORT || 8080);
-const host = process.env.HOST || "0.0.0.0";
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../dist");
 const indexFile = path.join(root, "index.html");
 
@@ -38,7 +36,7 @@ function resolveFile(urlPath) {
   return indexFile;
 }
 
-const server = createServer((req, res) => {
+function handler(req, res) {
   const filePath = resolveFile(new URL(req.url || "/", "http://127.0.0.1").pathname);
   const ext = path.extname(filePath).toLowerCase();
   res.writeHead(200, {
@@ -51,13 +49,31 @@ const server = createServer((req, res) => {
       res.end();
     })
     .pipe(res);
-});
+}
 
-server.on("error", (error) => {
-  console.error(error);
-  process.exit(1);
-});
+const railwayPort = Number(process.env.PORT);
+const ports = [...new Set([railwayPort, 8080, 3000, 4173].filter((port) => Number.isInteger(port) && port > 0))];
+const hosts = ["::", "0.0.0.0"];
+let bound = 0;
 
-server.listen(port, host, () => {
-  console.log(`Fresquito listening on ${host}:${port}`);
-});
+function listen(port, host) {
+  const server = createServer(handler);
+  server.on("error", (error) => {
+    console.warn(`No se pudo abrir ${host}:${port} (${error.code || error.message})`);
+  });
+  server.listen(port, host, () => {
+    bound += 1;
+    console.log(`Fresquito listening on ${host}:${port}`);
+  });
+}
+
+for (const port of ports) {
+  for (const host of hosts) listen(port, host);
+}
+
+setTimeout(() => {
+  if (bound === 0) {
+    console.error("No se pudo abrir ningún puerto.");
+    process.exit(1);
+  }
+}, 2000);
