@@ -16,7 +16,7 @@ export const site: SiteConfig = {
   trade: "Servicio técnico de aires acondicionados, heladeras y lavarropas",
   eyebrow: "Servicio técnico residencial y comercial",
   heroPlace: "La Rioja Capital",
-  heroTitle: "Aires, heladeras y lavarropas.",
+  heroTitle: "Aires acondicionados, heladeras y lavarropas.",
   heroDescription: "Instalación, reparación y mantenimiento.",
   heroAudiences: ["Hogares", "Comercios", "Empresas"],
   heroMethod: "Trabajamos de inmediato. ¡Coordiná tu visita!",
@@ -31,7 +31,7 @@ export const site: SiteConfig = {
     display: "+54 9 3804 975680",
     e164: "5493804975680",
     defaultMessage:
-      "Hola, FresquitoRefrigeración. Quisiera solicitar un diagnóstico. El equipo (aire, heladera o lavarropas) se encuentra en La Rioja Capital y presenta el siguiente problema:",
+      "Hola, FresquitoRefrigeración. Quisiera solicitar un diagnóstico. El equipo (aire acondicionado, heladera o lavarropas) se encuentra en La Rioja Capital y presenta el siguiente problema:",
   },
   ctas: {
     primary: "Solicitar diagnóstico",
@@ -39,7 +39,7 @@ export const site: SiteConfig = {
   },
   seo: {
     title:
-      "Aires, heladeras y lavarropas en La Rioja | FresquitoRefrigeracion",
+      "Aires acondicionados, heladeras y lavarropas en La Rioja | FresquitoRefrigeracion",
     description:
       "Servicio técnico de aires acondicionados, heladeras y lavarropas en La Rioja Capital. Instalación, reparación y mantenimiento para hogares, comercios y empresas.",
     keywords: [

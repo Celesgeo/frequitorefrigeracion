@@ -4,7 +4,7 @@ import { buildWhatsAppUrl } from "@/lib/whatsapp";
 import { useEffect, useRef } from "react";
 
 const consultMessage =
-  "Hola, FresquitoRefrigeración. Les cuento lo que le sucede al equipo (aire, heladera o lavarropas) para recibir asesoramiento.";
+  "Hola, FresquitoRefrigeración. Les cuento lo que le sucede al equipo (aire acondicionado, heladera o lavarropas) para recibir asesoramiento.";
 
 export function FixedImageReveal() {
   const videoRef = useRef<HTMLVideoElement>(null);

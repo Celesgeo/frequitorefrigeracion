@@ -8,9 +8,9 @@ export const navItems = [
 ] as const;
 
 export const tickerPhrases = [
-  "Aires, heladeras y lavarropas",
+  "Aires acondicionados, heladeras y lavarropas",
   "Diagnóstico primero",
-  "Instalación de aires",
+  "Instalación de aires acondicionados",
   "Reparación de equipos",
   "Hogares, comercios y empresas",
   "Atención en La Rioja Capital",
@@ -33,7 +33,7 @@ export const trustItems = [
 
 export const servicesIntro = {
   kicker: "Servicios",
-  title: "Aires, heladeras y lavarropas. Cada uno se revisa distinto.",
+  title: "Aires acondicionados, heladeras y lavarropas. Cada uno se revisa distinto.",
   lead:
     "No empezamos cambiando piezas ni adelantando el trabajo sin ver el equipo. Revisamos, identificamos la posible causa y te explicamos qué conviene hacer antes de avanzar.",
 } as const;
@@ -47,7 +47,7 @@ export const services = [
       "Relevamos el ambiente, ubicamos las unidades y hacemos una colocación segura. Después verificamos la puesta en marcha.",
       "Si no enfría, gotea, hace ruido o corta, el primer paso es el diagnóstico. Recién ahí se propone la reparación o el mantenimiento.",
     ],
-    cta: "Consultar por un aire",
+    cta: "Consultar por un aire acondicionado",
     whatsappMessage:
       "Hola, FresquitoRefrigeración. Quisiera consultar por un aire acondicionado. El equipo se encuentra en La Rioja Capital.",
   },
@@ -105,7 +105,7 @@ export const audienceCards = [
   {
     id: "hogares",
     title: "Hogares",
-    text: "Aires, heladeras y lavarropas para el uso diario de la casa.",
+    text: "Aires acondicionados, heladeras y lavarropas para el uso diario de la casa.",
   },
   {
     id: "comercios",
@@ -115,7 +115,7 @@ export const audienceCards = [
   {
     id: "empresas",
     title: "Empresas",
-    text: "Varios equipos —aires, heladeras o lavarropas— con diagnóstico claro y visitas coordinadas.",
+    text: "Varios equipos —aires acondicionados, heladeras o lavarropas— con diagnóstico claro y visitas coordinadas.",
   },
 ] as const;
 
@@ -128,17 +128,17 @@ export const faqs = [
   {
     question: "¿Qué equipos atienden?",
     answer:
-      "Aires acondicionados, heladeras y lavarropas. En aires también hacemos instalación y mantenimiento. En heladeras y lavarropas el trabajo es diagnóstico y reparación.",
+      "Aires acondicionados, heladeras y lavarropas. En aires acondicionados también hacemos instalación y mantenimiento. En heladeras y lavarropas el trabajo es diagnóstico y reparación.",
   },
   {
-    question: "¿Instalan aires nuevos?",
+    question: "¿Instalan aires acondicionados nuevos?",
     answer:
       "Sí. Relevamos el espacio, hacemos el montaje, la puesta en marcha y verificamos que funcione.",
   },
   {
     question: "¿Qué problemas atienden?",
     answer:
-      "Aires que no enfrían, cortan o gotean. Heladeras que perdieron frío o hacen ruido. Lavarropas que no centrifugan, no desagotan o pierden agua. El primer paso es el diagnóstico.",
+      "Aires acondicionados que no enfrían, cortan o gotean. Heladeras que perdieron frío o hacen ruido. Lavarropas que no centrifugan, no desagotan o pierden agua. El primer paso es el diagnóstico.",
   },
   {
     question: "¿Cómo pido una visita?",
