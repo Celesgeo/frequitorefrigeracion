@@ -8,12 +8,12 @@ export const navItems = [
 ] as const;
 
 export const tickerPhrases = [
+  "Aires, heladeras y lavarropas",
   "Diagnóstico primero",
-  "Instalación responsable",
-  "Mantenimiento preventivo",
+  "Instalación de aires",
+  "Reparación de equipos",
   "Hogares, comercios y empresas",
   "Atención en La Rioja Capital",
-  "Tu confort, nuestra prioridad",
 ] as const;
 
 export const trustItems = [
@@ -22,45 +22,58 @@ export const trustItems = [
     text: "Vemos el equipo antes de proponer una solución.",
   },
   {
-    title: "Instalación prolija",
-    text: "Montaje, desagüe y puesta en marcha controlada.",
+    title: "Aires acondicionados",
+    text: "Instalación, reparación y mantenimiento, con puesta en marcha controlada.",
   },
   {
-    title: "Mantenimiento a tiempo",
-    text: "Limpieza y control para que rinda cuando más se exige.",
+    title: "Heladeras y lavarropas",
+    text: "Se identifica la falla antes de cambiar piezas.",
   },
 ] as const;
 
 export const servicesIntro = {
   kicker: "Servicios",
-  title: "Cada equipo necesita una respuesta diferente.",
+  title: "Aires, heladeras y lavarropas. Cada uno se revisa distinto.",
   lead:
-    "No empezamos cambiando piezas ni recomendando una carga de refrigerante sin saber qué está pasando. Revisamos el equipo, identificamos la posible causa y te explicamos qué conviene hacer antes de avanzar.",
+    "No empezamos cambiando piezas ni adelantando el trabajo sin ver el equipo. Revisamos, identificamos la posible causa y te explicamos qué conviene hacer antes de avanzar.",
 } as const;
 
 export const services = [
   {
-    id: "instalacion",
-    title: "Instalación de aire acondicionado",
-    headline: "Una buena instalación empieza antes de encender el equipo.",
+    id: "aires",
+    title: "Aires acondicionados",
+    headline: "Instalación, reparación y mantenimiento.",
     paragraphs: [
-      "Evaluamos el ambiente, la ubicación de las unidades y las condiciones para una colocación segura y funcional. Una vez instalado, verificamos la puesta en marcha y el funcionamiento.",
+      "Relevamos el ambiente, ubicamos las unidades y hacemos una colocación segura. Después verificamos la puesta en marcha.",
+      "Si no enfría, gotea, hace ruido o corta, el primer paso es el diagnóstico. Recién ahí se propone la reparación o el mantenimiento.",
     ],
-    cta: "Consultar por una instalación",
+    cta: "Consultar por un aire",
     whatsappMessage:
-      "Hola, FresquitoRefrigeración. Quisiera consultar por una instalación de aire acondicionado. El equipo se encuentra en La Rioja Capital.",
+      "Hola, FresquitoRefrigeración. Quisiera consultar por un aire acondicionado. El equipo se encuentra en La Rioja Capital.",
   },
   {
-    id: "diagnostico",
-    title: "Diagnóstico y reparación",
-    headline: "Encontrar la causa es más importante que disimular la falla.",
+    id: "heladeras",
+    title: "Heladeras",
+    headline: "Si no enfría, gotea o perdió frío, se revisa la causa.",
     paragraphs: [
-      "Si el equipo no enfría, pierde agua, hace ruidos, se apaga o funciona de manera irregular, revisamos sus principales componentes para identificar qué está provocando el problema.",
-      "Después del diagnóstico te explicamos qué encontramos y cuál es la alternativa recomendada, para que puedas decidir cómo continuar.",
+      "Revisamos termostato, motor, circuito y estado general antes de recomendar una carga de gas o un recambio.",
+      "Después del diagnóstico te explicamos qué encontramos y qué conviene hacer, para que decidas cómo seguir.",
     ],
-    cta: "Solicitar un diagnóstico",
+    cta: "Consultar por una heladera",
     whatsappMessage:
-      "Hola, FresquitoRefrigeración. Quisiera solicitar un diagnóstico. El equipo se encuentra en La Rioja Capital.",
+      "Hola, FresquitoRefrigeración. Quisiera consultar por una heladera. El equipo se encuentra en La Rioja Capital.",
+  },
+  {
+    id: "lavarropas",
+    title: "Lavarropas",
+    headline: "No centrifuga, no desagota o pierde agua: primero el diagnóstico.",
+    paragraphs: [
+      "Revisamos desagüe, motor, programador y pérdidas antes de cambiar piezas.",
+      "El trabajo se define en el equipo, no en un recambio automático.",
+    ],
+    cta: "Consultar por un lavarropas",
+    whatsappMessage:
+      "Hola, FresquitoRefrigeración. Quisiera consultar por un lavarropas. El equipo se encuentra en La Rioja Capital.",
   },
 ] as const;
 
@@ -79,7 +92,7 @@ export const processSteps = [
   {
     number: "02",
     title: "Diagnóstico en el lugar",
-    text: "Revisamos el aire y te explicamos qué conviene hacer.",
+    text: "Revisamos el equipo y te explicamos qué conviene hacer.",
   },
   {
     number: "03",
@@ -92,17 +105,17 @@ export const audienceCards = [
   {
     id: "hogares",
     title: "Hogares",
-    text: "Instalación y servicio para el día a día, con el menor ruido posible.",
+    text: "Aires, heladeras y lavarropas para el uso diario de la casa.",
   },
   {
     id: "comercios",
     title: "Comercios",
-    text: "Reparación y mantenimiento coordinados para no frenar la atención al público.",
+    text: "Reparación coordinada para no frenar la atención al público ni la operatoria del local.",
   },
   {
     id: "empresas",
     title: "Empresas",
-    text: "Varios equipos, revisiones programadas y un diagnóstico claro.",
+    text: "Varios equipos —aires, heladeras o lavarropas— con diagnóstico claro y visitas coordinadas.",
   },
 ] as const;
 
@@ -113,19 +126,24 @@ export const faqs = [
       "En Ciudad de La Rioja, Capital. Las visitas se coordinan según disponibilidad y tipo de trabajo.",
   },
   {
-    question: "¿Instalan equipos nuevos?",
+    question: "¿Qué equipos atienden?",
+    answer:
+      "Aires acondicionados, heladeras y lavarropas. En aires también hacemos instalación y mantenimiento. En heladeras y lavarropas el trabajo es diagnóstico y reparación.",
+  },
+  {
+    question: "¿Instalan aires nuevos?",
     answer:
       "Sí. Relevamos el espacio, hacemos el montaje, la puesta en marcha y verificamos que funcione.",
   },
   {
     question: "¿Qué problemas atienden?",
     answer:
-      "Equipos que no enfrían, cortan, gotean, hacen ruido o perdieron rendimiento. El primer paso es el diagnóstico.",
+      "Aires que no enfrían, cortan o gotean. Heladeras que perdieron frío o hacen ruido. Lavarropas que no centrifugan, no desagotan o pierden agua. El primer paso es el diagnóstico.",
   },
   {
     question: "¿Cómo pido una visita?",
     answer:
-      "Por WhatsApp o el formulario. Contanos localidad, tipo de espacio y qué le sucede al aire.",
+      "Por WhatsApp o el formulario. Contanos localidad, qué equipo es y qué le sucede.",
   },
 ] as const;
 
@@ -133,6 +151,12 @@ export const clientTypes = [
   { value: "hogar", label: "Hogar" },
   { value: "comercio", label: "Comercio" },
   { value: "empresa", label: "Empresa" },
+] as const;
+
+export const equipmentTypes = [
+  { value: "aire", label: "Aire acondicionado" },
+  { value: "heladera", label: "Heladera" },
+  { value: "lavarropas", label: "Lavarropas" },
 ] as const;
 
 export const serviceOptions = [

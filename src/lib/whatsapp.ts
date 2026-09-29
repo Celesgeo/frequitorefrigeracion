@@ -16,6 +16,7 @@ export function buildContactWhatsAppMessage(fields: {
   phone: string;
   locality: string;
   clientType: string;
+  equipment: string;
   service: string;
   brandModel?: string;
   description: string;
@@ -27,6 +28,7 @@ export function buildContactWhatsAppMessage(fields: {
     `Teléfono: ${fields.phone}`,
     `Localidad: ${fields.locality}`,
     `Tipo de cliente: ${fields.clientType}`,
+    `Equipo: ${fields.equipment}`,
     `Servicio requerido: ${fields.service}`,
   ];
 

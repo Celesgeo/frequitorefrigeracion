@@ -4,18 +4,18 @@ import { services, servicesClose, servicesIntro } from "@/data/content";
 import { trackEvent } from "@/lib/analytics";
 import { buildWhatsAppUrl } from "@/lib/whatsapp";
 
-const servicePhotos = [
-  {
+const servicePhotos: Record<string, { src: string; alt: string; position: string }> = {
+  aires: {
     src: images.serviceAire,
     alt: "Técnico revisando un aire acondicionado de techo",
     position: "center 35%",
   },
-  {
+  heladeras: {
     src: images.serviceHeladera,
-    alt: "Reparación de un equipo de refrigeración",
+    alt: "Reparación de una heladera, imagen ilustrativa",
     position: "center",
   },
-] as const;
+};
 
 export function Services() {
   return (
@@ -30,21 +30,27 @@ export function Services() {
 
         <div className="mt-16 space-y-20 md:mt-20 md:space-y-28">
           {services.map((service, index) => {
-            const photo = servicePhotos[index];
-            const reverse = index % 2 === 1;
+            const photo = servicePhotos[service.id];
+            const reverse = Boolean(photo) && index % 2 === 1;
 
             return (
               <article
                 key={service.id}
-                className="grid items-center gap-8 border-t border-line pt-12 md:grid-cols-2 md:gap-16 md:pt-16 lg:gap-20"
+                className={
+                  photo
+                    ? "grid items-center gap-8 border-t border-line pt-12 md:grid-cols-2 md:gap-16 md:pt-16 lg:gap-20"
+                    : "border-t border-line pt-12 md:pt-16"
+                }
               >
-                <img
-                  src={photo.src}
-                  alt={photo.alt}
-                  className={`editorial-photo aspect-[4/3] min-h-0 max-h-[380px] ${reverse ? "md:order-2" : ""}`}
-                  style={{ objectPosition: photo.position }}
-                />
-                <div className={reverse ? "md:order-1" : undefined}>
+                {photo ? (
+                  <img
+                    src={photo.src}
+                    alt={photo.alt}
+                    className={`editorial-photo aspect-[4/3] min-h-0 max-h-[380px] ${reverse ? "md:order-2" : ""}`}
+                    style={{ objectPosition: photo.position }}
+                  />
+                ) : null}
+                <div className={reverse ? "md:order-1" : photo ? undefined : "max-w-2xl"}>
                   <h3 className="font-display text-2xl font-medium tracking-[-0.03em] text-graphite md:text-[1.7rem]">
                     {service.title}
                   </h3>

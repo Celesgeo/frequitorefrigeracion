@@ -13,12 +13,11 @@ export const site: SiteConfig = {
   brandName: "Fresquito",
   brandFullName: "FresquitoRefrigeracion",
   slogan: "Tu confort, nuestra prioridad",
-  trade: "Instalación, reparación y mantenimiento de aires acondicionados",
-  eyebrow: "Climatización residencial y comercial",
+  trade: "Servicio técnico de aires acondicionados, heladeras y lavarropas",
+  eyebrow: "Servicio técnico residencial y comercial",
   heroPlace: "La Rioja Capital",
-  heroTitle: "Instalación, reparación y mantenimiento de aires acondicionados.",
-  heroDescription:
-    "Hogares, comercios y empresas. Primero diagnosticamos el equipo; después recomendamos el trabajo.",
+  heroTitle: "Aires, heladeras y lavarropas.",
+  heroDescription: "Instalación, reparación y mantenimiento.",
   heroAudiences: ["Hogares", "Comercios", "Empresas"],
   heroMethod: "Trabajamos de inmediato. ¡Coordiná tu visita!",
   heroCtaPrimary: "Pedir diagnóstico por WhatsApp",
@@ -32,7 +31,7 @@ export const site: SiteConfig = {
     display: "+54 9 3804 975680",
     e164: "5493804975680",
     defaultMessage:
-      "Hola, FresquitoRefrigeración. Quisiera solicitar un diagnóstico. El equipo se encuentra en La Rioja Capital y presenta el siguiente problema:",
+      "Hola, FresquitoRefrigeración. Quisiera solicitar un diagnóstico. El equipo (aire, heladera o lavarropas) se encuentra en La Rioja Capital y presenta el siguiente problema:",
   },
   ctas: {
     primary: "Solicitar diagnóstico",
@@ -40,15 +39,15 @@ export const site: SiteConfig = {
   },
   seo: {
     title:
-      "Instalación y reparación de aire acondicionado en La Rioja | FresquitoRefrigeracion",
+      "Aires, heladeras y lavarropas en La Rioja | FresquitoRefrigeracion",
     description:
-      "Instalación, reparación y mantenimiento de aire acondicionado para hogares, comercios y empresas en La Rioja Capital. Solicitá un diagnóstico con Fresquito.",
+      "Servicio técnico de aires acondicionados, heladeras y lavarropas en La Rioja Capital. Instalación, reparación y mantenimiento para hogares, comercios y empresas.",
     keywords: [
       "reparación de aire acondicionado en La Rioja",
-      "instalación de aire acondicionado en La Rioja",
-      "mantenimiento de aire acondicionado",
+      "reparación de heladeras en La Rioja",
+      "reparación de lavarropas en La Rioja",
       "técnico en refrigeración en La Rioja",
-      "climatización para hogares y comercios",
+      "instalación de aire acondicionado en La Rioja",
     ],
   },
   footerCredit: "Diseño y desarrollo por CSTUDIODEVS",

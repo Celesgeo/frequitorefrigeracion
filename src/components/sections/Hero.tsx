@@ -12,6 +12,7 @@ export function Hero() {
           <div className="hero-copy">
             <p className="hero-place">{site.heroPlace}</p>
             <h1 className="hero-title">{site.heroTitle}</h1>
+            <p className="hero-method">{site.heroDescription}</p>
 
             <ul className="hero-audiences">
               {site.heroAudiences.map((audience) => (

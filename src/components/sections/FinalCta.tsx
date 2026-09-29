@@ -13,7 +13,7 @@ export function FinalCta() {
             Solicitá un diagnóstico en La Rioja Capital.
           </h2>
           <p className="mt-4 text-muted">
-            Escritorio o celular, el camino más directo es WhatsApp. Contá el problema y coordinamos la visita.
+            Escritorio o celular, el camino más directo es WhatsApp. Contá si es un aire, una heladera o un lavarropas y coordinamos la visita.
           </p>
           <p className="mt-3 text-sm text-graphite">WhatsApp {site.whatsapp.display}</p>
         </div>

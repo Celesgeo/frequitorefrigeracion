@@ -12,7 +12,7 @@ export function Audiences() {
         <SectionHeading
           kicker="Para quién"
           title="Hogares, comercios y empresas."
-          lead="El mismo criterio técnico, coordinado según el espacio."
+          lead="Aires, heladeras y lavarropas, con el mismo criterio técnico según el espacio."
         />
 
         <ol className="mt-12">

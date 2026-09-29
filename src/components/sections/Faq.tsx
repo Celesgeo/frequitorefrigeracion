@@ -12,7 +12,7 @@ export function Faq() {
         <SectionHeading
           kicker="Preguntas"
           title="Lo que suelen consultar."
-          lead="Zona, instalación y cómo pedir una visita."
+          lead="Zona, equipos y cómo pedir una visita."
         />
         <div className="border-t border-line">
           {faqs.map((item, index) => (

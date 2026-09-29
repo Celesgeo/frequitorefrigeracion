@@ -1,7 +1,7 @@
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { site } from "@/config/site";
-import { clientTypes, serviceOptions } from "@/data/content";
+import { clientTypes, equipmentTypes, serviceOptions } from "@/data/content";
 import { trackEvent } from "@/lib/analytics";
 import { buildContactWhatsAppMessage, buildWhatsAppUrl } from "@/lib/whatsapp";
 import { Clock3, MapPin, MessageCircle } from "lucide-react";
@@ -12,6 +12,7 @@ type FormState = {
   phone: string;
   locality: string;
   clientType: string;
+  equipment: string;
   service: string;
   brandModel: string;
   description: string;
@@ -25,6 +26,7 @@ const initialState: FormState = {
   phone: "",
   locality: "La Rioja Capital",
   clientType: "",
+  equipment: "",
   service: "",
   brandModel: "",
   description: "",
@@ -48,12 +50,15 @@ export function Contact() {
     if (Object.keys(nextErrors).length > 0) return;
 
     const clientLabel = clientTypes.find((item) => item.value === values.clientType)?.label ?? values.clientType;
+    const equipmentLabel =
+      equipmentTypes.find((item) => item.value === values.equipment)?.label ?? values.equipment;
     const serviceLabel = serviceOptions.find((item) => item.value === values.service)?.label ?? values.service;
     const message = buildContactWhatsAppMessage({
       name: values.name.trim(),
       phone: values.phone.trim(),
       locality: values.locality.trim(),
       clientType: clientLabel,
+      equipment: equipmentLabel,
       service: serviceLabel,
       brandModel: values.brandModel,
       description: values.description,
@@ -153,6 +158,23 @@ export function Contact() {
                 >
                   <option value="">Seleccionar</option>
                   {clientTypes.map((item) => (
+                    <option key={item.value} value={item.value}>
+                      {item.label}
+                    </option>
+                  ))}
+                </select>
+              </Field>
+              <Field label="Equipo" error={errors.equipment} htmlFor="equipment">
+                <select
+                  id="equipment"
+                  name="equipment"
+                  value={values.equipment}
+                  aria-invalid={Boolean(errors.equipment)}
+                  aria-describedby={errors.equipment ? "equipment-error" : undefined}
+                  onChange={(event) => update("equipment", event.target.value)}
+                >
+                  <option value="">Seleccionar</option>
+                  {equipmentTypes.map((item) => (
                     <option key={item.value} value={item.value}>
                       {item.label}
                     </option>
@@ -274,6 +296,7 @@ function validate(values: FormState): FormErrors {
   if (digits(values.phone).length < 8) errors.phone = "Ingresá un teléfono válido.";
   if (values.locality.trim().length < 3) errors.locality = "Ingresá la localidad.";
   if (!values.clientType) errors.clientType = "Seleccioná el tipo de cliente.";
+  if (!values.equipment) errors.equipment = "Seleccioná el equipo.";
   if (!values.service) errors.service = "Seleccioná el servicio.";
   if (values.description.trim().length < 10) {
     errors.description = "Describí el problema con un poco más de detalle.";
